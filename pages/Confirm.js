@@ -3,6 +3,7 @@ import Map from "./components/Map";
 import tw from "tailwind-styled-components";
 import { useRouter } from "next/router";
 import RideSelector from "./components/RideSelector";
+import Link from "next/link";
 const Confirm = () => {
   const router = useRouter();
   // 🆒 Hyimen
@@ -50,6 +51,13 @@ const Confirm = () => {
 
   return (
     <Wrapper>
+        <ButtonContainer>
+                <Link href="/Search">
+                    <BackButton
+                        src='https://img.icons8.com/ios-filled/50/000000/left.png'
+                    />
+                </Link>
+            </ButtonContainer>
       <Map pick={pick} drop={drop} />
       <RideContainer>
                 <RideSelector pick={pick} drop={drop} />
@@ -64,6 +72,15 @@ const Confirm = () => {
 };
 
 export default Confirm;
+
+const ButtonContainer = tw.div`
+rounded-full absolute top-4 left-4 z-10 bg-white shadow-md cursor-pointer
+`
+
+const BackButton = tw.img`
+h-full object-contain 
+`
+
 const Wrapper = tw.div`
 flex h-screen flex-col
 `;

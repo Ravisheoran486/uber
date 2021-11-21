@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import tw from 'tailwind-styled-components'
 import { carList } from '../data/carList'
-
+import Times from './Times'
 const RideSelector = (props) => {
     const [duration, setDuration ]= useState(0);
 
@@ -35,7 +35,11 @@ useEffect(()=>{
                         <CarImage src={car.imgUrl} />
                         <CarDetails>
                             <Service>{car.service}</Service>
-                            <Time>5 min away</Time>
+                            <Time>
+                                <Times 
+                                duration = {duration}
+                                A = {car.multiplier} />
+                            </Time>
                         </CarDetails>
                         <Price>₹{(duration/1000*car.multiplier*74.31).toFixed(2)}</Price>
                     </Car>

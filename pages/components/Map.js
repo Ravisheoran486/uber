@@ -28,6 +28,17 @@ const Map = (props) => {
         padding: 60,
       });
     }
+
+  map.addControl(
+    new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+    })
+  );
+
+
   }, [props.pick, props.drop]);
 
   // Good job Chen

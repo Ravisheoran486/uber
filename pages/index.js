@@ -16,7 +16,7 @@ export default function Home() {
           <UserProfile>
             <Name>Ravi Sheoran</Name>
 
-            <Profile src="https://lh3.googleusercontent.com/a-/AOh14GiD9MBH2IcIdXX8uw40dBSdCkjbAbabGqJPsXaE=s96-c" />
+            <Profile src="./my (1).jpg" />
           </UserProfile>
         </Header>
 
